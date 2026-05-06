@@ -5,8 +5,8 @@ function block(verdi) {
     if (l < 4) {
         respons = "Need at least 4 characters";
     } else {
-        let i = 0;
-        while (i < Math.floor(l/4)) {
+        let i = 0; 
+        while (i < Math.floor(l/4)) { 
             let a = verdi.substring(0, 2);
             let b = verdi.substring(2, 4);
             respons += b + a;

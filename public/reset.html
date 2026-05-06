@@ -12,14 +12,18 @@
     </style>
 </head>
 <body>
+    <h1>Reset password</h1>
     <p id="session" class="session">
         <a href="index.html">Back to front page</a> -- <a href="register.html">Register</a> -- <a href="login.html">Login</a>
     </p>
     <script src="include/session.pub.js" defer></script>
-    <h1>Encrypter</h1>
-    <input type="text" id="input" placeholder="Enter your text">
-    <p id="output"></p>
-   
-    <script src="include/block.pub.js" defer></script>
+    <form id="reset">
+        <input type="password" id="oldPassword" placeholder="Old password"><br />
+        <input type="password" id="newPassword" placeholder="New password"><br />
+        <input type="password" id="confirmPassword" placeholder="Confirm password"><br />
+        <button type="submit" id="resetButton">Reset password</button>
+    </form>
+    <script src="include/reset.pub.js" defer></script>
+    
 </body>
 </html>

@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <style>
+        .session {
+            width: auto;
+            float: right;
+        }
+    </style>
 </head>
 <body>
-<h1>Register</h1>
-<form id="register">
-    <input type="text" id="userName" placeholder="Username"><br />
-    <input type="password" id="password" placeholder="Password"><br />
-    <button type="submit" id="registerButton" disabled>Register</button>
-</form>
-<p id="message"></p>
+    <h1>Register</h1>
+    <p id="session" class="session">
+        <a href="index.html">Back to front page</a> -- <a href="register.html">Register</a> -- <a href="login.html">Login</a>
+    </p>
+    <script src="include/session.pub.js" defer></script>
+    <form id="register">
+        <input type="text" id="userName" placeholder="Username"><br />
+        <input type="password" id="password" placeholder="Password"><br />
+        <button type="submit" id="registerButton">Register</button>
+    </form>
+    <p id="result"></p>
 
-<a href="index.html">Back to front page</a> -- <a href="login.html">Login</a>
-
-<script src="include/register.pub.js" defer></script>
+    <script src="include/register.pub.js" defer></script>
 </body>
 </html>

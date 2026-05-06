@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <style>
+        .session {
+            width: auto;
+            float: right;
+        }
+    </style>
 </head>
 <body>
-<h1>Login</h1>
-<form id="login">
-    <input type="text" id="userName" placeholder="Username"><br />
-    <input type="password" id="password" placeholder="Password"><br />
-    <button type="submit" id="loginButton">Login</button>
-</form>
-<p id="result"></p>
+    <h1>Login</h1>
+    <p id="session" class="session">
+        <a href="index.html">Back to front page</a> -- <a href="register.html">Register</a> -- <a href="login.html">Login</a>
+    </p>
+    <script src="include/session.pub.js" defer></script>
+    <form id="login">
+        <input type="text" id="userName" placeholder="Username"><br />
+        <input type="password" id="password" placeholder="Password"><br />
+        <button type="submit" id="loginButton">Login</button>
+    </form>
+    <p id="result"></p>
 
-<br /><a href="index.html">Back to front page</a> -- <a href="Register.html">Register</a>
-
-<script src="include/login.pub.js" defer></script>
+    <script src="include/login.pub.js" defer></script>
 </body>
 </html>
