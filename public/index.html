@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encrypter</title>
-    <style>
-        .session {
-            width: auto;
-            float: right;
-        }
-    </style>
+    <link rel="stylesheet" href="include/styles.css">
 </head>
 <body>
-    <p id="session" class="session">
-        <a href="index.html">Back to front page</a> -- <a href="register.html">Register</a> -- <a href="login.html">Login</a>
-    </p>
-    <script src="include/session.pub.js" defer></script>
-    <h1>Encrypter</h1>
-    <input type="text" id="input" placeholder="Enter your text">
-    <p id="output"></p>
-   
-    <script src="include/block.pub.js" defer></script>
+<div class="page-shell">
+    <div class="session-container">
+        <p id="session" class="session-message"></p>
+        <nav id="menu" class="session-menu"></nav>
+    </div>
+
+    <main class="card">
+        <h1>Encrypter</h1>
+        <p class="lead">Skriv inn tekst, sa blir den blokk-kryptert mens du skriver.</p>
+        <input type="text" id="input" placeholder="Enter your text">
+        <p id="output" class="output"></p>
+    </main>
+</div>
+
+<script src="include/session.pub.js" defer></script>
+<script src="include/block.pub.js" defer></script>
 </body>
 </html>

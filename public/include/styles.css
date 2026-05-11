@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f4efe7 0%, #d9e7f2 100%);
+    color: #1f2933;
+}
+
+.page-shell {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.session-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 14px;
+    min-height: 28px;
+    margin-bottom: 24px;
+}
+
+.session-message {
+    margin: 0;
+    font-weight: 700;
+}
+
+.session-menu {
+    display: flex;
+    gap: 10px;
+}
+
+.session-menu a {
+    color: #1c5d7d;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.session-menu a:hover {
+    text-decoration: underline;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(28, 93, 125, 0.18);
+    border-radius: 18px;
+    box-shadow: 0 16px 40px rgba(33, 56, 77, 0.12);
+    padding: 28px;
+}
+
+.form-card {
+    max-width: 520px;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.lead {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #52606d;
+}
+
+.stack {
+    display: grid;
+    gap: 12px;
+}
+
+input,
+button {
+    font: inherit;
+}
+
+input {
+    padding: 12px 14px;
+    border: 1px solid #bcccdc;
+    border-radius: 10px;
+    background: #fdfefe;
+}
+
+button {
+    border: 0;
+    border-radius: 10px;
+    padding: 12px 16px;
+    background: #1c5d7d;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+button:hover {
+    background: #164a64;
+}
+
+.feedback,
+.output {
+    margin-bottom: 0;
+    font-weight: 700;
+}

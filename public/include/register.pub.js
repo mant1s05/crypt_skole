@@ -16,7 +16,12 @@ reg.addEventListener("submit", async function (e) {
         })
     });
     const data = await res.json();
-    console.log(data);
-    const resultText = "Bruker " + un + " ble opprettet med id " + data.result.lastID;
-    result.innerHTML = resultText;
+
+    if (res.ok && data.result) {
+        result.textContent = `Bruker ${un} ble opprettet med id ${data.result.lastID}.`;
+        reg.reset();
+        return;
+    }
+
+    result.textContent = data.message || "Registrering feilet.";
 });

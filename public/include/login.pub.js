@@ -16,9 +16,15 @@ login.addEventListener("submit", async function (e) {
         })
     });
     const data = await res.json();
-    console.log(data);
 
-    checkSession();
-//    const resultText = "Bruker " + un + " (id:" + data.result.userID + ") ble logget inn.";
-//    result.innerHTML = resultText;
+    if (res.ok && data.status === "success") {
+        result.textContent = `Du ${data.userName} er logget inn med bruker-ID: ${data.idUser}.`;
+        login.reset();
+        if (typeof window.checkSession === "function") {
+            window.checkSession();
+        }
+        return;
+    }
+
+    result.textContent = "Innlogging feilet. Bruker ma prove igjen.";
 });
