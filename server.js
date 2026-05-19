@@ -19,6 +19,7 @@ require("./private/db.pri.js");
 const { block } = require("./private/block.pri");
 const { register } = require("./private/register.pri.js");
 const { login } = require("./private/login.pri.js");
+const { logout } = require("./private/logout.pri.js");
 
 app.post("/api/block", (req, res) => {
     const verdi = req.body.value;
@@ -45,6 +46,17 @@ app.post("/api/login", async (req, res) => {
             req.session.userId = result.idUser;
             req.session.userName = result.userName;
         }
+        res.json(result);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ status: "error", message: err.message });
+    }
+});
+
+app.post("/api/logout", async (req, res) => {
+    try {
+        const result = await logout(req);
+        res.clearCookie("connect.sid");
         res.json(result);
     } catch (err) {
         console.error(err);

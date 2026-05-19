@@ -1,32 +1,10 @@
 const sessionP = document.getElementById("session");
 const menu = document.getElementById("menu");
 
-function getCurrentPage() {
-    const page = window.location.pathname.split("/").pop();
-    return page || "index.html";
-}
-
-function createLink(href, label) {
-    return `<a href="${href}">${label}</a>`;
-}
-
-function renderMenu(isLoggedIn) {
-    const currentPage = getCurrentPage();
-    const links = [];
-
-    if (currentPage !== "index.html") {
-        links.push(createLink("index.html", "Forside"));
-    }
-
-    if (!isLoggedIn && currentPage !== "register.html") {
-        links.push(createLink("register.html", "Register"));
-    }
-
-    if (!isLoggedIn && currentPage !== "login.html") {
-        links.push(createLink("login.html", "Login"));
-    }
-
-    menu.innerHTML = links.join(" | ");
+function renderMenu(links) {
+    menu.innerHTML = links
+        .map((link) => `<a href="${link.href}">${link.label}</a>`)
+        .join("");
 }
 
 async function checkSession() {
@@ -34,13 +12,18 @@ async function checkSession() {
     const data = await res.json();
 
     if (data.userId && data.userName) {
-        sessionP.textContent = `${data.userName} (id: ${data.userId}) logged in`;
-        renderMenu(true);
-        return;
+        sessionP.textContent = `${data.userName} (id: ${data.userId}) er logget inn.`;
+        renderMenu([
+            { href: "reset.html", label: "Reset password" },
+            { href: "logout.html", label: "Logout" }
+        ]);
+    } else {
+        sessionP.textContent = "Ingen bruker er logget inn.";
+        renderMenu([
+            { href: "login.html", label: "Login" },
+            { href: "register.html", label: "Register" }
+        ]);
     }
-
-    sessionP.textContent = "";
-    renderMenu(false);
 }
 
 window.checkSession = checkSession;

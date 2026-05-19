@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <link rel="stylesheet" href="include/styles.css">
+</head>
+<body>
+<div class="page-shell">
+    <div class="session-container">
+        <p id="session" class="session-message"></p>
+        <nav id="menu" class="session-menu"></nav>
+    </div>
+
+    <main class="card form-card">
+        <h1>Logout</h1>
+        <p class="lead">Brukeren blir logget ut na. Du blir sendt tilbake til forsiden automatisk.</p>
+        <p id="logoutMessage" class="feedback">Logger ut ...</p>
+        <p class="lead"><a href="index.html">Tilbake til forsiden</a></p>
+    </main>
+</div>
+
+<script src="include/session.pub.js" defer></script>
+<script src="include/logout.pub.js" defer></script>
+</body>
+</html>
