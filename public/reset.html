@@ -15,17 +15,19 @@
 
     <main class="card form-card">
         <h1>Reset password</h1>
-        <p class="lead">Denne siden er ikke en del av del 4 enda, men er beholdt i prosjektet.</p>
+        <p class="lead">Bytt passord mens du er logget inn.</p>
         <form id="reset" class="stack">
-            <input type="password" id="oldPassword" placeholder="Old password">
-            <input type="password" id="newPassword" placeholder="New password">
-            <input type="password" id="confirmPassword" placeholder="Confirm password">
-            <button type="submit" id="resetButton">Reset password</button>
+            <input type="password" id="oldPassword" placeholder="Old password" required>
+            <input type="password" id="newPassword" placeholder="New password" required>
+            <input type="password" id="confirmPassword" placeholder="Confirm password" required>
+            <span id="errorMessage" class="match-indicator"></span>
+            <button type="submit" id="resetButton" disabled>Reset password</button>
         </form>
-        <p id="result" class="feedback">Ingen reset-rute er laget pa serveren enda.</p>
+        <p id="resultReset" class="feedback"></p>
     </main>
 </div>
 
 <script src="include/session.pub.js" defer></script>
+<script src="include/reset.pub.js" defer></script>
 </body>
 </html>

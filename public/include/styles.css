@@ -94,8 +94,19 @@ button:hover {
     background: #164a64;
 }
 
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+    background: #7b9fb1;
+}
+
 .feedback,
 .output {
     margin-bottom: 0;
+    font-weight: 700;
+}
+
+.match-indicator {
+    min-height: 20px;
     font-weight: 700;
 }
