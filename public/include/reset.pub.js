@@ -51,7 +51,7 @@ form.addEventListener("submit", async function (e) {
             })
         });
         const data = await res.json();
-        console.log("Reset response:", data);
+        // console.log("Reset response:", data);
 
         if (!res.ok || data.status !== "success") {
             resultReset.innerHTML = `<span style="color: #b42318;">${data.message || "Passordet ble ikke oppdatert."}</span>`;
